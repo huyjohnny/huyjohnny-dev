@@ -53,7 +53,7 @@ export const projects: Project[] = [
       "Implemented backend APIs for portfolio calculations and historical data handling.",
       "Integrated persistent storage for user portfolios and uploaded simulation assets.",
     ],
-    stack: ["Angular", "Spring Boot 3", "MySQL", "AWS S3"],
+    stack: ["Angular", "Spring Boot", "MySQL", "AWS"],
     links: {
       live: "https://example.com",
       liveNote: "Service down",

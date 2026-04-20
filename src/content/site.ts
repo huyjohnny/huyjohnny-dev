@@ -52,11 +52,11 @@ export const siteContent = {
     ],
     toolbox: [
       { group: "Frontend", items: ["React", "Angular", "TypeScript", "Tailwind"] },
-      { group: "Backend", items: ["Spring Boot 3", "Node.js", "REST APIs", "JPA"] },
+      { group: "Backend", items: ["Spring Boot", "Node.js", "REST APIs", "JPA"] },
       { group: "Mobile", items: ["Swift", "SwiftUI", "iOS", "Xcode"] },
-      { group: "Data & Cloud", items: ["MySQL", "MongoDB", "AWS", "S3"] },
+      { group: "Data & Cloud", items: ["MySQL", "MongoDB", "AWS"] },
     ],
-    learning: "Currently leveling up: AWS + system design",
+    learning: "Currently leveling up: AWS + building agentic AI",
   },
   contact: {
     title: "Contact",

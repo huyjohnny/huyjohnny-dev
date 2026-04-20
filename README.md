@@ -2,6 +2,10 @@
 
 A modern personal portfolio built with Next.js, TypeScript, and Tailwind CSS.
 
+## Link
+
+https://huyjohnny-portfolio.vercel.app/
+
 ## Overview
 
 This project is a single-page portfolio site with:
