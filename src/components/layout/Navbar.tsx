@@ -27,24 +27,48 @@ export default function Navbar() {
     const sections = ["top", "projects", "about", "contact"]
       .map((id) => document.getElementById(id))
       .filter((element): element is HTMLElement => Boolean(element));
+    let frameId: number | null = null;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-        if (visible[0]?.target.id) {
-          setActiveSection(visible[0].target.id);
+    const updateActiveSection = () => {
+      frameId = null;
+      const marker = window.innerHeight * 0.4;
+      let currentSection = sections[0]?.id ?? "top";
+
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top <= marker) {
+          currentSection = section.id;
+        } else {
+          break;
         }
-      },
-      {
-        rootMargin: "-35% 0px -45% 0px",
-        threshold: [0.2, 0.5, 0.75],
-      },
-    );
+      }
 
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+      // The final section may be shorter than the viewport and never cross the marker.
+      const atPageBottom =
+        window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
+      if (atPageBottom && sections.at(-1)) {
+        currentSection = sections.at(-1)!.id;
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    const scheduleUpdate = () => {
+      if (frameId === null) {
+        frameId = window.requestAnimationFrame(updateActiveSection);
+      }
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+
+    return () => {
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+      if (frameId !== null) {
+        window.cancelAnimationFrame(frameId);
+      }
+    };
   }, []);
 
   useEffect(() => {
