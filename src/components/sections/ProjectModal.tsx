@@ -127,20 +127,14 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
         <div className="mt-6 flex flex-wrap gap-3">
           {project.links.appStore ? (
-            <div className="group relative">
-              <button
-                type="button"
-                aria-disabled="true"
-                className="inline-flex cursor-not-allowed items-center rounded-lg bg-accent/70 px-4 py-2 text-sm font-semibold text-bg/80"
-              >
-                App Store
-              </button>
-              {project.links.appStoreNote ? (
-                <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md border border-border/50 bg-surface px-2.5 py-1 text-xs text-text opacity-0 shadow-card transition group-hover:opacity-100">
-                  {project.links.appStoreNote}
-                </span>
-              ) : null}
-            </div>
+            <a
+              href={project.links.appStore}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-bg transition hover:-translate-y-0.5 hover:shadow-glow"
+            >
+              App Store
+            </a>
           ) : null}
           {project.links.live ? (
             <div className="group relative">

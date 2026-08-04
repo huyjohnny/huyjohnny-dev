@@ -11,7 +11,7 @@ export default function ProjectCard({ project, onOpen }: ProjectCardProps) {
     <button
       type="button"
       onClick={(event) => onOpen(project, event.currentTarget)}
-      className="card-edge group relative flex min-h-[28rem] w-full transform-gpu flex-col rounded-xl border border-border/45 bg-surface p-5 text-left shadow-card transition-[transform,box-shadow,background-color,border-color] duration-700 ease-[cubic-bezier(.16,1,.3,1)] hover:-translate-y-1 hover:scale-[1.006] hover:border-border/70 hover:bg-surface/95 hover:shadow-[0_24px_54px_rgba(110,84,52,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
+      className="card-edge group relative flex h-full min-h-[28rem] w-full transform-gpu flex-col rounded-xl border border-border/45 bg-surface p-5 text-left shadow-card transition-[transform,box-shadow,background-color,border-color] duration-700 ease-[cubic-bezier(.16,1,.3,1)] hover:-translate-y-1 hover:scale-[1.006] hover:border-border/70 hover:bg-surface/95 hover:shadow-[0_24px_54px_rgba(110,84,52,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
     >
       <div className="mb-4 overflow-hidden rounded-lg border border-border/45 bg-bg/40">
         <div className="relative h-64 w-full md:h-72">
@@ -31,14 +31,9 @@ export default function ProjectCard({ project, onOpen }: ProjectCardProps) {
           )}
         </div>
       </div>
-      <div className="mb-3 flex items-center justify-between gap-3">
-        {project.meta ? (
-          <p className="text-xs font-medium uppercase tracking-[0.16em] text-muted-2">{project.meta}</p>
-        ) : (
-          <span />
-        )}
-        <span className="text-xs text-muted-2">Case Study</span>
-      </div>
+      {project.meta ? (
+        <p className="mb-3 text-xs font-medium uppercase tracking-[0.16em] text-muted-2">{project.meta}</p>
+      ) : null}
 
       <h3 className="text-xl font-semibold tracking-tight text-text transition duration-500 ease-[cubic-bezier(.16,1,.3,1)] group-hover:translate-x-0.5">
         {project.title}

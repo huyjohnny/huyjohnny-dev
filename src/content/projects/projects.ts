@@ -33,8 +33,7 @@ export const projects: Project[] = [
     ],
     stack: ["Swift", "SwiftUI", "iOS", "Xcode"],
     links: {
-      appStore: "https://apps.apple.com/",
-      appStoreNote: "Pending App Store relaunch",
+      appStore: "https://apps.apple.com/us/app/daily-leaf/id6445947088",
     },
     meta: "Mobile App",
     coverImage: {

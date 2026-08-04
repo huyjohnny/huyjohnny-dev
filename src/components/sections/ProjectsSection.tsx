@@ -32,9 +32,9 @@ export default function ProjectsSection() {
           <p className="section-subtitle mt-2.5 text-sm md:text-base">{projectsCopy.subtitle}</p>
         </MotionReveal>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:auto-rows-fr md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project, index) => (
-            <MotionReveal key={project.id} delayMs={index * 90}>
+            <MotionReveal key={project.id} delayMs={index * 90} className="h-full">
               <ProjectCard project={project} onOpen={openProject} />
             </MotionReveal>
           ))}
