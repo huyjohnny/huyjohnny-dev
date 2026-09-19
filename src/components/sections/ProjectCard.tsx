@@ -43,7 +43,7 @@ export default function ProjectCard({ project, onOpen }: ProjectCardProps) {
       </p>
 
       <div className="mt-4 flex flex-wrap gap-2">
-        {project.stack.slice(0, 3).map((item) => (
+        {project.stack.slice(0, 2).map((item) => (
           <Tag key={item}>{item}</Tag>
         ))}
       </div>

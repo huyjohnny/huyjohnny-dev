@@ -1,4 +1,4 @@
-import { Code2, Coffee, CookingPot, Music2, Sparkles } from "lucide-react";
+import { BadgeCheck, Code2, Coffee, CookingPot, Music2, Sparkles } from "lucide-react";
 import Image from "next/image";
 import { siteContent } from "../../content/site";
 import Panel from "../ui/Panel";
@@ -101,6 +101,20 @@ export default function AboutSection() {
                     </div>
                   </div>
                 ))}
+              </div>
+
+              <div className="mt-5 border-t border-border/35 pt-4">
+                <p className="mb-3 text-xs font-medium uppercase tracking-[0.14em] text-muted-2">
+                  Certifications
+                </p>
+                <ul className="space-y-2.5">
+                  {about.certifications.map((certification) => (
+                    <li key={certification} className="flex gap-2 text-sm leading-relaxed text-muted">
+                      <BadgeCheck size={16} className="mt-0.5 shrink-0 text-accent" aria-hidden />
+                      <span>{certification}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
               <div className="mt-5 flex items-center gap-2 text-sm text-muted">

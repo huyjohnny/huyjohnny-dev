@@ -64,25 +64,23 @@ export const projects: Project[] = [
     },
   },
   {
-    id: "cloudlodge-hms",
-    title: "CloudLodge",
-    oneLiner: "A full-stack hospitality platform for account, booking, and payment workflows.",
+    id: "waste-identification-system",
+    title: "Waste Identification System",
+    oneLiner: "An agentic AI copilot for traceable, citation-grounded RCRA waste determinations.",
     description:
-      "Built and maintained key account and security workflows for a hotel management platform, including user flows, payment features, and booking support.",
+      "Built an AI-assisted compliance platform that turns multimodal regulatory sources into traceable waste determinations, with citation validation, persistent audit trails, and human review built into the workflow.",
     bullets: [
-      "Implemented account management features and role-based user controls.",
-      "Worked on security and authentication flows with backend service protections.",
-      "Integrated Stripe payment and shopping-cart style booking interactions.",
+      "Built multimodal RAG ingestion pipelines across 10+ file formats, processing six regulatory documents totaling 91 pages into normalized, citation-grounded context.",
+      "Architected an 11-table PostgreSQL data layer for compliance dossiers, audit trails, and review queues, keeping AI-assisted determinations traceable.",
+      "Implemented citation validation, readiness checks, escalation logic, and human-review guardrails to prevent unsupported compliance determinations.",
+      "Deployed the containerized platform across 8+ Azure resources using Docker and GitHub Actions.",
     ],
-    stack: ["React", "Spring Boot", "MongoDB", "AWS"],
-    links: {
-      live: "https://example.com",
-      liveNote: "Service down",
-    },
-    meta: "Full Stack",
+    stack: ["Microsoft Agent Framework", "Azure", "FastAPI", "PostgreSQL"],
+    links: {},
+    meta: "Agentic AI",
     coverImage: {
-      src: "/images/projects/cloudlodge/hotel_cover.webp",
-      alt: "CloudLodge hotel management system preview",
+      src: "/images/projects/waste-identification-system/waste_cover.webp",
+      alt: "Rows of blue industrial material drums in a warehouse",
     },
   },
 ];
